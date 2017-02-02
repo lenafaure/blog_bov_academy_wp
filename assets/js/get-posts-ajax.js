@@ -16,22 +16,19 @@ for ( i = 0; i < len; i++ ) {
   jQuery.ajax({
     url: php_array.admin_ajax,
     type: 'POST',
-    data: ({action: 'home_page_post', id: postID}),
+    data: {
+      'post_id': postID,
+      'action': 'home_page_post'},
     beforeSend: function() {
       jQuery(postContent).html('Loading...');
       // console.log('Post id: ' + postID);
     },
-    success: function(data, textStatus, jqXHR) {
-      var response = jQuery(data);
-      jQuery(postContent).html(response);
-      console.log('data: ', data);
+   success: function (data) {
+        console.log(data);
     },
     error: function(jqXHR, textStatus, error) {
       console.error('The error occured: ' + textStatus, error)
-    }/*,
-    complete: function(jqXHR, textStatus) {
-      console.log('Completed: ', textStatus);
-    }*/
+    }
   });
 
 }

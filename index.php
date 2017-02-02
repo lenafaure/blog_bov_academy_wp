@@ -35,8 +35,8 @@ get_header(); ?>
 
 				/* Start the Loop */
 				while ( have_posts() ) : the_post(); ?>
-				
-						<section id="<?php the_ID() ?>" class="jt-article-preview">
+
+				<section id="<?php the_ID() ?>" class="jt-article-preview">
 			        <div class="jt-article-preview__bg-wrap">
 			          <div class="jt-article-preview__bg-overlay"></div>
 			          <img class="jt-article-preview__bg" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="">
@@ -90,7 +90,7 @@ get_header(); ?>
 			        </div>
 			      </section>		
 
-				<?php	endwhile; ?>
+				<?php endwhile; ?>
 
 				<?php the_posts_pagination( array(
 						'prev_text' => twentyseventeen_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="screen-reader-text">' . __( 'Previous page', 'twentyseventeen' ) . '</span>',

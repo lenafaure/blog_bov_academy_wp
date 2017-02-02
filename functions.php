@@ -581,12 +581,32 @@ add_action('wp_ajax_home_page_post', 'home_page_post_init');
 add_action('wp_ajax_nopriv_home_page_post', 'home_page_post_init');
 
 function home_page_post_init() {
-	echo get_bloginfo( 'title' );
-	// $args = array('p' => $_POST['id']);
-	// $home_post_query = new WP_Query($args);
-	// there is a missing code here... I don't know what should go here
-	die();
+	  // retrieve post_id, and sanitize it to enhance security
+    $post_id = intval($_POST['post_id'] );
+
+    // Check if the input was a valid integer
+    if ( $post_id == 0 ) {
+        echo "Invalid Input";
+        die();
+    }
+
+    // get the post
+    $thispost = get_post( $post_id );
+
+    // check if post exists
+    if ( !is_object( $thispost ) ) {
+        echo 'There is no post with the ID ' . $post_id;
+        die();
+    }
+
+    echo $thispost->post_content;
+
+    die();
 }
+
+add_action( 'home_page_post', 'home_page_post_init' );
+// If you want not logged in users to be allowed to use this function as well, register it again with this function:
+add_action( 'home_page_post', 'home_page_post_init' );
 
 /**
  * Implement the Custom Header feature.
