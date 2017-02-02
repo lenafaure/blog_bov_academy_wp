@@ -577,9 +577,6 @@ function theme_enqueue_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_scripts' );
 
-add_action('wp_ajax_home_page_post', 'home_page_post_init');
-add_action('wp_ajax_nopriv_home_page_post', 'home_page_post_init');
-
 function home_page_post_init() {
 	  // retrieve post_id, and sanitize it to enhance security
     $post_id = intval($_POST['post_id'] );
@@ -602,12 +599,6 @@ function home_page_post_init() {
     echo $thispost->post_content;
 
     die();
-}
-
-function bov_get_post_content_callback() {
-
-  
-
 }
 
 add_action( 'wp_ajax_home_page_post', 'home_page_post_init' );
