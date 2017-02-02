@@ -551,6 +551,44 @@ function twentyseventeen_front_page_template( $template ) {
 add_filter( 'frontpage_template',  'twentyseventeen_front_page_template' );
 
 /**
+* Add functions that register and enqueue the theme assets, like styles and scripts
+*
+* Script 'get-posts-ajax.js' loads the post contents on the home page after the page has loaded
+*
+*/
+/** Register Scripts. */
+function theme_register_scripts() {
+  /** Register JavaScript File */
+  wp_register_script( 'get-posts-ajax', get_template_directory_uri() . '/assets/js/get-posts-ajax.js', array( 'jquery' ), '1.0', true );
+
+  /** Localize Scripts */
+  $php_array = array( 'admin_ajax' => admin_url( 'admin-ajax.php' ) );
+  wp_localize_script( 'get-posts-ajax', 'php_array', $php_array );
+
+}
+add_action( 'wp_enqueue_scripts', 'theme_register_scripts', 1 );
+
+/** Enqueue Scripts. */
+function theme_enqueue_scripts() {
+  /** Enqueue JavaScript File */
+  if ( is_home() ) {
+    wp_enqueue_script( 'get-posts-ajax' );
+  }
+}
+add_action( 'wp_enqueue_scripts', 'theme_enqueue_scripts' );
+
+add_action('wp_ajax_home_page_post', 'home_page_post_init');
+add_action('wp_ajax_nopriv_home_page_post', 'home_page_post_init');
+
+function home_page_post_init() {
+	echo get_bloginfo( 'title' );
+	// $args = array('p' => $_POST['id']);
+	// $home_post_query = new WP_Query($args);
+	// there is a missing code here... I don't know what should go here
+	die();
+}
+
+/**
  * Implement the Custom Header feature.
  */
 require get_parent_theme_file_path( '/inc/custom-header.php' );
