@@ -610,7 +610,7 @@ function bov_get_post_content_callback() {
 
 }
 
-add_action( 'home_page_post', 'home_page_post_init' );
+add_action( 'wp_ajax_home_page_post', 'home_page_post_init' );
 add_action( 'wp_ajax_nopriv_home_page_post', 'home_page_post_init' );
 
 /**
