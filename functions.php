@@ -596,7 +596,12 @@ function home_page_post_init() {
         die();
     }
 
-    echo $thispost->post_content;
+    // set response header
+		header('Content-type: application/json');
+    // create an associative array with the post Id and post content
+    $post = array('post_id' => $post_id, 'post_content' => $thispost->post_content);
+    // encode the response as JSON
+    echo json_encode($post);
 
     die();
 }

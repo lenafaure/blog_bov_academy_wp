@@ -36,7 +36,7 @@ get_header(); ?>
 				/* Start the Loop */
 				while ( have_posts() ) : the_post(); ?>
 
-				<section id="<?php the_ID() ?>" class="jt-article-preview">
+				<section id="post-<?php the_ID() ?>" class="jt-article-preview">
 			        <div class="jt-article-preview__bg-wrap">
 			          <div class="jt-article-preview__bg-overlay"></div>
 			          <img class="jt-article-preview__bg" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="">
@@ -78,7 +78,7 @@ get_header(); ?>
 			            </div>
 			          </div>
 			          <div class="jt-article-preview__buttons">
-			            <div data-post-id="<?php the_ID() ?>" class="jt-article-preview__more">
+			            <div data-post-id="post-<?php the_ID() ?>" class="jt-article-preview__more">
 			              <i class="material-icons">fullscreen</i>
 			              <span>Quick Read</span>
 			            </div>
