@@ -604,9 +604,14 @@ function home_page_post_init() {
     die();
 }
 
+function bov_get_post_content_callback() {
+
+  
+
+}
+
 add_action( 'home_page_post', 'home_page_post_init' );
-// If you want not logged in users to be allowed to use this function as well, register it again with this function:
-add_action( 'home_page_post', 'home_page_post_init' );
+add_action( 'wp_ajax_nopriv_home_page_post', 'home_page_post_init' );
 
 /**
  * Implement the Custom Header feature.

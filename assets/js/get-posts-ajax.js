@@ -20,7 +20,7 @@ for ( i = 0; i < len; i++ ) {
       'post_id': postID,
       'action': 'home_page_post'},
     beforeSend: function() {
-      jQuery(postContent).html('Loading...');
+      // jQuery(postContent).html('Loading...');
       // console.log('Post id: ' + postID);
     },
    success: function (data) {
