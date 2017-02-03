@@ -29,7 +29,7 @@ get_header(); ?>
 			<?php
 			
 			// Query only posts that are in the "Upcoming" category
-			query_posts('cat=-2');
+
 			
 			if ( have_posts() ) :
 
@@ -93,32 +93,20 @@ get_header(); ?>
 				<?php endwhile; ?>
 
 				<?php the_posts_pagination( array(
-						'prev_text' => twentyseventeen_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="screen-reader-text">' . __( 'Previous page', 'twentyseventeen' ) . '</span>',
-						'next_text' => '<span class="screen-reader-text">' . __( 'Next page', 'twentyseventeen' ) . '</span>' . twentyseventeen_get_svg( array( 'icon' => 'arrow-right' ) ),
-						'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentyseventeen' ) . ' </span>',
+						'prev_text' =>  '<span><i class="material-icons">keyboard_arrow_left</i>' . __( '', 'twentyseventeen' ) . '</span>',
+						'before_page_number' => __( '', 'twentyseventeen' ),
+						'next_text' => '<span>  <i class="material-icons">keyboard_arrow_right</i>' . __( '', 'twentyseventeen' ) . '</span>'
 					) );
-
-			else :
+				?>	
+			
+		
+		<?php else :
 
 				get_template_part( 'template-parts/post/content', 'none' );
 
 			endif;
 			?>
 			
-		 <div class="jt-pagination">
-	        <i class="material-icons">keyboard_arrow_left</i>
-	        <ul>
-	          <li class="jt-pagination__item"><a href="#">1</a></li>
-	          <li class="jt-pagination__item"><a href="#">2</a></li>
-	          <li class="jt-pagination__item"><a href="#">3</a></li>
-	          <li class="jt-pagination__item"><a href="#">4</a></li>
-	          <li class="jt-pagination__item"><a href="#">5</a></li>
-	          <li class="jt-pagination__item"><a href="#">6</a></li>
-	          <li class="jt-pagination__item"><a href="#">...</a></li>
-	          <li class="jt-pagination__item"><a href="#">35</a></li>
-	        </ul>
-	        <i class="material-icons">keyboard_arrow_right</i>
-	      </div>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

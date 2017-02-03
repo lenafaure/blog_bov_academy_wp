@@ -20,7 +20,7 @@
   var contentWrap = document.querySelectorAll(".jt-article-preview__content-wrap");
   var blurbContainer = document.querySelectorAll('.jt-article-preview');
   var bg = document.querySelectorAll('.jt-article-preview__bg-wrap');
-  var pagination = document.querySelector('.jt-pagination');
+  var pagination = document.querySelector('.lf-pagination');
   
   var header = document.querySelector('header');
   var footer = document.querySelector('footer');

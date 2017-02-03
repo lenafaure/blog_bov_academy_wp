@@ -1644,6 +1644,52 @@ body {
   right: 20px;
 }
 
+.lf-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-top: 2px solid #c9cfd7;
+  font-weight: 700;
+  font-size: 20px;
+  height: 100px;
+  padding-top: 20px;
+}
+
+.lf-pagination a, .lf-pagination .page-numbers {
+  margin-right: 40px;
+  color: #4f565e;
+  cursor: pointer;
+}
+
+.lf-pagination .material-icons {
+  position: absolute;
+  color: #4f565e;
+  cursor: pointer;
+  top: 0;
+  font-size: 35px;
+  color: #4f565e;
+}
+
+.lf-pagination .material-icons:hover {
+    color: #6cc8db;
+}
+
+.lf-pagination  .prev .material-icons {
+  top: 34px;
+  left: 20px;
+}
+
+.lf-pagination  .next .material-icons {
+    top: 34px;
+    right: 20px;
+}
+
+.lf-pagination .current,
+.lf-pagination .page-numbers:hover {
+  color: #6cc8db;
+}
+
 
 /*Tablet styles (not important - leave for the end)*/
 
