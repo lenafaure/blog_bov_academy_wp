@@ -76,9 +76,11 @@
     TweenMax.to(search, 0.2, {
       opacity: 0,
     })
-    TweenMax.to(pagination, 0.2, {
-      opacity: 0,
-    })
+    if(pagination) {
+      TweenMax.to(pagination, 0.2, {
+        opacity: 0,
+      })
+    }
     TweenMax.to(excerpt[index], 0.2, {
       display: 'none',
     })
@@ -108,10 +110,13 @@
       opacity: 1,
       delay: 0.5
     })
-    TweenMax.to(pagination, 0.2, {
-      opacity: 1,
-      delay: 0.5
-    })
+    if(pagination) {
+        TweenMax.to(pagination, 0.2, {
+        opacity: 1,
+        delay: 0.5
+      })
+    }
+    
     TweenMax.to(excerpt, 0.2, {
       display: 'block',
     })
