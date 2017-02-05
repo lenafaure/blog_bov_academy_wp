@@ -14,7 +14,7 @@
 
 ?>
 	
-		</div><!-- #content -->
+		</main><!-- #content -->
 
 		<!-- Footer starts here -->
 		  <footer class="jr-footer">

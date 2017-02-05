@@ -17,9 +17,9 @@
 
 get_header(); ?>
 
+
+<div class="content-wrap">
 <?php get_search_form( ); ?>
-
-
 
 <div class="wrap">
 
@@ -82,10 +82,10 @@ get_header(); ?>
 			              <i class="material-icons">fullscreen</i>
 			              <span>Quick Read</span>
 			            </div>
-			            <div class="jt-article-preview__goto">
+			            <a href="<?php the_permalink(); ?>" class="jt-article-preview__goto">
 			              <i class="material-icons">open_in_new</i>
-			              <span><a href="<?php the_permalink(); ?>">Go to post</a></span>
-			            </div>
+			              <span>Go to post</span>
+			            </a>
 			          </div>
 			        </div>
 			      </section>		
@@ -101,9 +101,9 @@ get_header(); ?>
 			
 		
 		<?php else :
-
+	
 				get_template_part( 'template-parts/post/content', 'none' );
-
+	
 			endif;
 			?>
 			

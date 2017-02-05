@@ -1789,6 +1789,8 @@ body {
 
 .bg-background-image {
   position: relative;
+  height: 290px;
+  overflow: hidden;
 }
 
   .bg-background-image-shade {
@@ -1801,6 +1803,7 @@ body {
 
   .bg-background-image img {
     max-width: 100%;
+    margin-top: -15%;
   }
 
     .bg-background-image-text {
@@ -2720,4 +2723,38 @@ body {
     filter: opacity(0.4);
   }
 
+}
+
+/* COMMENTS */
+
+.comment-list {
+  margin: 0 auto;
+}
+
+.comment-list ul, .comment-list li {
+  list-style: none;
+}
+
+.comment-author.vcard img{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+.comment-reply-link img {
+  height: 20px;
+}
+
+.comment-body {
+  padding: 2rem 0 1.8rem;
+  border-top: 1px solid #bbb;
+}
+
+.comment-meta, .comment-author {
+  display: flex;
+  align-items: center;
+}
+
+.comment-meta {
+  justify-content: space-between;
 }

@@ -193,5 +193,4 @@
 	  </div>
 	  <!-- End Subscribe Button -->
 
-	  <div class="container">
-		<div class="content-wrap">
+	  <main class="container">
